@@ -1,0 +1,407 @@
+@import url('https://fonts.googleapis.com/css2?family=Iceland&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    background: url("images/bg.png");
+    background-size: cover;
+}
+button, input[type="submit"], input[type="reset"] {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+polygon
+{
+    fill: transparent;
+}
+@keyframes exist
+{
+    0% {right: 10%; bottom: 0%}
+    100% {right: 50%; bottom: 50%}
+}
+@keyframes apear {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+@keyframes disapear {
+    100% {
+        display: block;
+        opacity: 0;
+        visibility: hidden;
+    }
+    0% {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+    }
+}
+footer
+{
+    display: flex;
+    width: 100% ;
+    justify-content: space-between;
+    margin-top: 100px;
+    background: url(images/header.png);
+    background-size: cover;
+    height: 120px;
+    transition: 1s;
+}
+header, section, footer
+{
+    animation-name: apear;
+    animation-duration: 3s;
+    z-index: 10;
+}
+video
+ {
+     position: fixed;
+     left: 0;
+     top: 0;
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     opacity: 0.7;
+     mix-blend-mode: overlay;
+     z-index: 0;
+
+ }
+#startMenu{
+    transition: all 0.5s linear;
+    display: block;
+}
+#startMenu.activated{
+    opacity: 0;
+    left: 0;
+    top: 0;
+    animation-name: disapear;
+}
+#startMenu.activated video
+{
+    opacity: 0;
+    left: 0;
+    top: 0;
+    animation-name: disapear;
+}
+#main
+{
+    display: none;
+}
+#main.activated{
+    display: block;
+}
+.batton
+{
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    bottom: 50%;
+    right: 50%;
+    transform: translate(50%, 50%);
+}
+.triangle
+{
+    stroke: #D3D3D3;
+    stroke-opacity: 53%;
+    stroke-width: 8px;
+}
+.triangle1
+{
+    stroke: #B8B1B1;
+    stroke-opacity: 38%;
+    stroke-width: 8px;
+}
+.wrapButton
+{
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    bottom: 50%;
+    right: 50%;
+    visibility: visible;
+    animation-name: exist;
+    transform: translate(50%, 50%);
+    animation-duration: 1s;
+    z-index: 0;
+    transition: 0.5s;
+}
+.wrapper
+{
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    bottom: 50%;
+    right: 50%;
+    visibility: visible;
+    transform: translate(50%, 50%);
+    overflow: hidden;
+    animation-name: exist;
+    animation-duration: 1s;
+    transition: 1s;
+    z-index: 1;
+}
+.button
+{
+    position: absolute;
+    bottom: 50%;
+    right: 50%;
+    width: 240px;
+    height: 240px;
+    font-family: 'Iceland', cursive;
+    background: url("images/cell.jpg") 52% 26%;
+    background-size: 1124px 540px, cover;
+    /*background-size: 50% 25% 25%;*/
+    color: #FFFFFF;
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    transform: translate(50%, 50%);
+    text-align: center;
+    visibility: visible;
+    animation-name: exist;
+    animation-duration: 0.8s;
+    transition: 1s;
+}
+.textButton
+{
+    position: fixed;
+    bottom: 50%;
+    right: 50%;
+    padding-top: 40px;
+    font-size: 2vw;
+    font-family: 'Iceland', cursive;
+    transform: translate(50%, 50%);
+    color: #FFFFFF;
+    text-align: center;
+    transition: 1s;
+}
+.batton:hover .textButton
+{
+    font-size: 2.5vw;
+}
+.banner
+{
+    background: url(images/header.png);
+    height: 120px;
+    width: 100%;
+    transition: 1s;
+}
+.main
+{
+    position: absolute;
+    top: 6%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 1s;
+}
+.mainText
+{
+    position: absolute;
+    top: 6%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2vw;
+    color: #FFFFFF;
+    font-family: 'Iceland', cursive;
+    transition: 1s;
+}
+.aboutMe
+{
+    background: url("images/background-roses.png");
+    background-size: cover;
+    margin: 70px auto 0;
+    padding: 30px 0 0 0;
+    text-align: center;
+    height: 400px;
+    width: 600px;
+    color: white;
+    font-size: 2vw;
+    font-family: 'Iceland', cursive;
+    border-radius: 23px;
+    transition: 1s;
+}
+.card
+{
+    position: relative;
+    margin: 0 auto;
+    height: 400px;
+    width: 600px;
+    color: white;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+.card .circle
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.card img
+{
+    position: absolute;
+    top: 66%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 400px;
+    width: 300px;
+    pointer-events: none;
+    transition: 0.5s;
+}
+.card .aboutMe
+{
+    position: relative;
+    transition: 0.5s;
+    left: 20%;
+    opacity: 0;
+    visibility: hidden;
+}
+.card .circle:before
+{
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: 1%;
+    height: 400px;
+    width: 600px;
+    background: #3160ef;
+    clip-path: circle(120px at center);
+    transition: 2s;
+}
+.card:hover img
+{
+    left: 0%;
+    height: 600px;
+    width: 450px;
+}
+.card:hover .circle:before
+{
+    clip-path: circle(180px at center);
+}
+
+.card:hover .aboutMe
+{
+    left: 20%;
+    opacity: 1;
+    visibility: visible;
+}
+.inlineWrap
+{
+    position: relative;
+    margin: 180px auto 0;
+    display: flex;
+    height: 400px;
+    width: 600px;
+    align-items: center;
+    transition: 0.5s;
+}
+.inlineWrap .circle
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+}
+.inlineWrap .aboutHobby
+{
+    position: relative;
+    height: 400px;
+    width: 600px;
+    left: 0%;
+    opacity: 0;
+    visibility: hidden;
+    background: url("images/background-roses.png");
+    background-size: cover;
+    padding: 60px 0 0 0;
+    text-align: center;
+    color: white;
+    font-size: 25px;
+    font-family: 'Iceland', cursive;
+    border-radius: 23px;
+    transition: 0.5s;
+}
+.inlineWrap .circle:before
+{
+    content: '';
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 400px;
+    width: 600px;
+    background: #d7c339;
+    clip-path: circle(120px at center);
+    transition: 1s;
+}
+.inlineWrap:hover .logo
+{
+    left: 100%;
+    height: 400px;
+    width: 350px;
+}
+.inlineWrap:hover .circle:before
+{
+    clip-path: circle(50px at center);
+}
+
+.inlineWrap:hover .aboutHobby
+{
+    left: -70px;
+    opacity: 1;
+    visibility: visible;
+}
+.logo
+{
+    position: absolute;
+    top: 50%;
+    left: 51%;
+    transform: translate(-50%, -50%);
+    height: 290px;
+    width: 255px;
+    pointer-events: none;
+    transition: 0.5s;
+}
+.icons
+{
+    height: 50px;
+    width: 50px;
+    margin-left: 40px;
+    margin-top: 20px;
+    transition: 1s;
+}
+.email
+{
+    margin-right: 100px;
+    margin-top: 20px;
+    color: white;
+    font-size: 25px ;
+    font-family: 'Iceland', cursive;
+    transition: 1s;
+}
+.textEmail
+{
+    margin-bottom: 20px;
+    transition: 1s;
+}
+.textIcons
+{
+    margin-top: 10px;
+    margin-left: 30px;
+    text-align: center;
+    color: white;
+    font-size: 30px ;
+    font-family: 'Iceland', cursive;
+    transition: 1s;
+}

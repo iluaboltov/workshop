@@ -1,0 +1,265 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: #92caed ;
+  overflow: hidden;
+  max-width: 3000px;
+  max-height:2000px;
+}
+div[class*="post"]:hover{
+  border-top: 1px solid #5b5a5f;
+}
+ul{
+  width: 160px;
+  margin-top: 17px;
+  margin-left: 23px;
+}
+hr{
+  margin-top: 15px;
+  color: #d9dade;
+  border-style: solid;
+  border-width: 1px;
+}
+.wrapper{
+  margin-top: 85px;
+  margin-left: auto;
+  margin-right: auto;
+  width:100%;
+  height: 100%;
+  max-width: 320px;
+  max-height: 640px;
+}
+.border-section{
+  position: relative;
+  border: 8px solid #FAFAFA;
+  background-color: #eeeff1;
+  box-shadow: 10px 10px 26px -17px rgba(0,0,0,0.82);
+  border-radius: 62px;
+  min-width: 320px;
+  min-height: 640px;
+}
+.cap{
+position: absolute;
+background-color: #eeeff1;
+border-radius:0 0 25px 25px;
+height: 45px;
+width: 160px;
+left: 68px;
+}
+.user-profile{
+  background-color: #FAFAFA;
+  border-radius: 38px;
+  width: 270px;
+  height: 580px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.username{
+  /* position: relative; */
+  display: block;
+  padding-top: 39px;
+  padding-left: 102px;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  font-size: 10px;
+}
+.logo{
+  height: 62px;
+  width: 62px;
+  margin-top: 4px;
+  margin-left: 19px;
+ border-radius: 100px;
+  background-color: #dbdbdb;
+}
+.theme{
+  position: absolute;
+  font-family: 'Roboto', sans-serif;
+  font-size: 8px;
+}
+.theme:nth-child(4){
+ left:120px;
+ top: 113px;
+}
+.theme:nth-child(5){
+  left: 165px;
+  top: 113px;
+}
+.theme:nth-child(6){
+  left: 214px;
+  top: 113px;
+}
+.numbers{
+  position: absolute;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+}
+.numbers:first-child{
+  left: 119px;
+  top: 95px;
+}
+.numbers:nth-child(2){
+  left: 164px;
+  top: 94px;
+}
+.numbers:nth-child(3){
+  left: 216px;
+  top: 93px;
+}
+.description{
+  font-family: 'Roboto', sans-serif;
+  font-size: 9px;
+  color: #87868A;
+}
+
+.style-a{
+  color: #76AADB;
+  text-decoration: none;
+}
+.button{
+  width: 82px;
+  height: 23px;
+  background-color: #ffff;
+  border: 1px solid #EDEEF0;
+  border-radius: 6px;
+  margin-top: 15px;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  font-size: 8px;
+}
+.button:focus{
+  outline:none !important;
+  box-shadow: 0px 0px 1px 1px rgba(217,218,222,1);
+}
+.button:first-child{
+  margin-left: 6px;
+}
+.button:nth-child(2){
+  margin-left: 1px;
+}
+.button:last-child{
+  margin-left: 1px;
+}
+.ball{
+  position:relative;
+  display: inline-block;
+  height: 45px;
+  width: 45px;
+  margin-left: 5px;
+  margin-top: 10px;
+  border: 2px solid #dbdbdb;
+  background-color: #FAFAFA;
+  border-radius: 50px;
+}
+.inner-ball{
+  position: absolute;
+  width: 37px;
+  height: 37px;
+  left: 2px;
+  top: 2.1px;
+  border-radius: 50px;
+  background-color: #dbdbdb;
+}
+.inner-ball:first-child{
+  left: 1px;
+}
+.inner-ball:last-child{
+  left: 2px;
+}
+.icon-row{
+  margin-top: 5px;
+  margin-bottom: 3px;
+}
+.icon-cube{
+  height: 20px;
+  width: 20px;
+  margin-left: 36px;
+}
+.icon-tv{
+  margin-left: 65px;
+  height: 23px;
+  width: 23px;
+}
+.icon-logo{
+  margin-left: 67px;
+  height: 22px;
+  width: 24px;
+}
+.post{
+  display: inline-block;
+  width: 88.6px;
+  height: 88px;
+  margin-bottom: -2.5px;
+  background-color: #dbdbdb;
+}
+.post:last-child{
+  background-color: #eeeff1;
+}
+.post:not(:first-of-type){
+  margin-left: -2.4px;
+}
+.post-narrower{
+  display: inline-block;
+  width: 88.6px;
+  height: 62px;
+  margin-bottom: -2.8px;
+  background-color: #dbdbdb;
+}
+.post-narrower:first-child{
+  background-color: #eeeff1;
+}
+.post-narrower:last-child{
+  background-color: #eeeff1;
+}
+.post-narrower:not(:first-of-type){
+  margin-left: -2.4px;
+}
+.post-narrower-sec{
+  position: relative;
+  display: inline-block;
+  width: 88.6px;
+  height: 39px;
+  border-radius:0 0 15px 15px;
+  background-color: #dbdbdb;
+}
+.post-narrower-sec:not(:first-of-type){
+  margin-left: -2.4px;
+}
+.nav{
+  position: absolute;
+  background-color: #fafafa;
+  top: 546px;
+  border-radius: 0 0 33px 33px;
+  height: 53px;
+  width: 269px;
+}
+.icon-house{
+  height: 22px;
+  width: 22px;
+  margin-left: 20px;
+  margin-top: 14px;
+}
+.icon-loop{
+  height: 22px;
+  width: 22px;
+  margin-left: 23px;
+}
+.icon-plus{
+  height: 22px;
+  width: 22px;
+  margin-left: 26px;
+}
+.icon-sent{
+  height: 22px;
+  width: 22px;
+  margin-left: 28px;
+}
+.icon-circle{
+  height: 22px;
+  width: 22px;
+  margin-left: 28px;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bio/Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+<video src="nano.mp4" class="video" id="down" muted loop autoplay ></video>
+<div id="startMenu">
+    <div class="wrapper">
+        <svg height="250" width="250">
+            <polygon points="125,10 10,240 240,240" class="triangle"/>
+            <polygon points="125,28 22,232 227,232" class="triangle1"/>
+        </svg>
+        <button class="batton" id="button"></button>
+    </div>
+    <div class="wrapButton">
+        <div class="button">
+            <video src="nano.mp4" muted loop autoplay ></video>
+            <span class="textButton">Click it</span>
+        </div>
+    </div>
+</div>
+<div id="main">
+    <header>
+        <div class="banner">
+            <svg width="391" height="95" viewBox="0 0 391 95" fill="none" xmlns="http://www.w3.org/2000/svg" class="main">
+                <path d="M345.056 90L346.473 88.7515L343.168 85C346.473 88.7515 346.474 88.7505 346.476 88.7491L346.481 88.7449L346.496 88.7314L346.549 88.6841C346.595 88.6436 346.66 88.5852 346.745 88.5096C346.914 88.3583 347.159 88.138 347.471 87.853C348.096 87.2833 348.994 86.4548 350.101 85.4044C352.313 83.3051 355.371 80.311 358.771 76.717C365.516 69.5853 373.82 59.8659 379.437 49.9678C382.246 45.019 384.517 39.7949 385.488 34.6598C386.466 29.487 386.175 24.0925 383.427 19.251C380.674 14.3984 375.868 10.8327 369.269 8.50697C362.718 6.19796 354.116 5.00002 343.168 5.00002L193.86 5.00001L46.6119 5C25.8418 5 12.7948 9.62805 7.4766 19.3119C4.83063 24.13 4.55123 29.4868 5.4929 34.6308C6.4292 39.7456 8.62056 44.9586 11.338 49.9068C16.7722 59.8021 24.8089 69.5223 31.3394 76.6571C34.6299 80.2522 37.5906 83.2473 39.7326 85.3475C40.8044 86.3984 41.6734 87.2273 42.2788 87.7975C42.5815 88.0826 42.8185 88.3032 42.9821 88.4547C43.064 88.5304 43.1275 88.5888 43.1717 88.6294L43.2235 88.6769L43.2384 88.6905L43.243 88.6947C43.2446 88.6961 43.2458 88.6972 46.6119 85L43.2458 88.6972L44.6767 90H46.6119L343.168 90H345.056Z" fill="#337D6B" stroke="#1C4B40" stroke-width="10" />
+            </svg>
+            <span class="mainText">Main</span>
+        </div>
+    </header>
+    <section>
+        <video src="nano.mp4" class="video" id ="cell" muted loop autoplay ></video>
+        <div class="card">
+            <div class="circle">
+                <div class="aboutMe">
+                    <p>Title:  Bio\Portofolio</p>
+                    <p>Name: Bogdan Paliy</p>
+                    <p>College: CSBC</p>
+                    <p>General:</p>
+                    <p>So nowadays I studying in college on a specialst of software engineer. For now, I choosing in which specific category I’m intrested in, to be the most “productive” “worker” of all the time.</p>
+                </div>
+            </div>
+            <img src="images/MeBottles.png" class="meBottles">
+        </div>
+        <div class="inlineWrap">
+            <div class="circle">
+                <div class="aboutHobby">
+                    <p>In my spare time, I like to spend in drawing with plain pencil, and for sure in future I'd like to buy some drawing pad. Because who knows what type of specialist I'd be. And for some reason I found intresting collection some photo, such as classical drawing,traditional photo, historical moment. However, I tried to play in Blender, and after I found that's a big  work for those who master in that</p>
+                </div>
+            </div>
+            <img class="logo" src="images/biggay.png">
+        </div>
+    </section>
+    <footer>
+        <div>
+            <img src="icons/facebook.png" class = "icons" alt="">
+            <img src="icons/instagram.png" class = "icons" alt="">
+            <img src="icons/telegram.png" class = "icons" alt="">
+            <p class="textIcons">
+                Contacts
+            </p>
+        </div>
+        <div class="email">
+            <p class="textEmail">
+                Email:  Iluaboltov@gmail.com
+            </p>
+            <p>
+                © copyrights all rights reserved
+            </p>
+        </div>
+    </footer>
+</div>
+<script>
+    const speed = document.getElementById("cell")
+    speed.playbackRate = 0.6
+
+    const button = document.getElementById("button")
+    const header = document.getElementById("main")
+    const menu = document.getElementById("startMenu")
+
+    button.onclick = function(){
+        header.className = "activated"
+        menu.className = "activated"
+        document.getElementById("down").style.display = "none"
+    }
+
+</script>
+</body>
+</html>

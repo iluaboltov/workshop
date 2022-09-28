@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>hhtml</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link rel="stylesheet" href="ccss.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <form action="" method="post" id="form">
+        <div class="div-submit-button">
+          <input id="input-info" type="number" placeholder="Enter a number" />
+          <input type="submit" />
+        </div>
+
+        <div class="div-radio-button" id="buttons">
+          <div class="check-box active">
+            <span class="material-symbols-outlined icon"> commit </span>
+            <label for="word">Слова</label>
+            <input type="radio" name="type" value="word" id="word" />
+          </div>
+
+          <div class="check-box">
+            <span class="material-symbols-outlined icon"> menu </span>
+            <label for="str">Рядки</label>
+            <input type="radio" name="type" value="str" id="str" />
+          </div>
+
+          <div class="check-box">
+            <span class="material-symbols-outlined icon"> wysiwyg </span>
+            <label for="pgrph">Абзаци</label>
+            <input type="radio" name="type" value="pgrph" id="pgrph" />
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      let selectedSpan;
+      let form = document.querySelector('#form');
+      const div = document.createElement('div');
+      div.classList.add('lorem');
+      const checkBox = document.getElementsByClassName('check-box');
+      for (let el of checkBox) {
+        el.addEventListener('click', (event) => {
+          const div = event.target.closest('div');
+          const span = div.querySelector('span');
+          highlight(span);
+        });
+      }
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        let valueButton = document.querySelector('#input-info').value;
+        let button = document.querySelector('#input-info');
+        if (!valueButton) {
+          button.setAttribute('placeholder', 'asshole nigga enter a value');
+          return;
+        }
+        let typeRadio = checkedRadioButton(
+          document.querySelectorAll("input[name='type']"),
+        );
+
+        createLorem(valueButton, typeRadio, div);
+      });
+
+      function highlight(span) {
+        if (selectedSpan) {
+          selectedSpan.classList.remove('active');
+        }
+        selectedSpan = span;
+        selectedSpan.classList.add('active');
+      }
+
+      function checkedRadioButton(variable) {
+        for (let el of variable) {
+          if (el.checked) {
+            return el.value;
+          }
+        }
+      }
+
+      const generateLine = (wordsNumber) => {
+        let coma;
+
+        wordsNumber >= 20
+          ? coma = Math.floor(Math.random() * wordsNumber) + 10
+          : coma = 0;
+
+        let word = getWord();
+        const words = [word[0].toUpperCase() + word.slice(1)];
+
+        for (let i = 0; i < wordsNumber - 1; i++) {
+          let generatedWord = getWord()
+          if (i % coma === 0 && i !== 0) {
+            generatedWord += ',';
+          }
+          words.push(generatedWord);
+        }
+        return words.join(' ') + '.';
+      };
+
+      function createLorem(value, type, element) {
+        switch (type) {
+          case 'word': {
+            // create p
+            element.insertAdjacentElement('beforebegin', resultText);
+            document.body.append(element);
+            break;
+          }
+          case 'str': {
+            let tempText = '';
+            for (let i = 0; i < value; i++) {
+              tempText += makeStrLorem();
+            }
+            element.innerHTML =
+              '<p>' + '   Lorem, ipsum... ' + tempText + '</p>';
+            document.body.append(element);
+            break;
+          }
+          case 'pgrph': {
+            let text = '';
+            for (let i = 0; i < value; i++) {
+              let numStr = Math.floor(Math.random() * 15) + 3;
+              text += '<p>';
+              for (let j = 0; j < numStr; j++) {
+                text += makeStrLorem();
+              }
+              text += '</p>';
+            }
+            element.innerHTML = text;
+            document.body.append(element);
+            break;
+          }
+        }
+      }
+
+      function makeStrLorem() {
+        let coma;
+        let wordsNumber = Math.floor(Math.random() * 20) + 5;
+
+        let word = getWord() + ' ';
+
+        let result = word[0].toUpperCase() + word.slice(1);
+
+        wordsNumber >= 20
+          ? coma = Math.floor(Math.random() * wordsNumber) + 10
+          : coma = 0;
+
+        for (let i = 0; i <= wordsNumber - 1; i++) {
+          if (i % coma === 0 && i !== 0) {
+            result += getWord() + ', ';
+            continue;
+          }
+          result += getWord() + ' ';
+        }
+        return result + '. ';
+      }
+
+      function getWord() {
+        const collectionOfWord = [
+          'lorem',
+          'ipsum',
+          'dolor',
+          'sit',
+          'amet',
+          'consectetur',
+          'adipiscing',
+          'elit',
+          'curabitur',
+          'vel',
+          'hendrerit',
+          'libero',
+          'eleifend',
+          'blandit',
+          'nunc',
+          'ornare',
+          'odio',
+          'ut',
+          'orci',
+          'gravida',
+          'imperdiet',
+          'nullam',
+          'purus',
+          'lacinia',
+          'a',
+          'pretium',
+          'quis',
+          'congue',
+          'praesent',
+          'sagittis',
+          'laoreet',
+          'auctor',
+          'mauris',
+          'non',
+          'velit',
+          'eros',
+          'dictum',
+          'proin',
+          'accumsan',
+          'sapien',
+          'nec',
+          'massa',
+          'volutpat',
+          'venenatis',
+          'sed',
+          'eu',
+          'molestie',
+          'lacus',
+          'quisque',
+          'porttitor',
+          'ligula',
+          'dui',
+          'mollis',
+          'tempus',
+          'at',
+          'magna',
+          'vestibulum',
+          'turpis',
+          'ac',
+          'diam',
+          'tincidunt',
+          'id',
+          'condimentum',
+          'enim',
+          'sodales',
+          'in',
+          'hac',
+          'habitasse',
+          'platea',
+          'dictumst',
+          'aenean',
+          'neque',
+          'fusce',
+          'augue',
+          'leo',
+          'eget',
+          'semper',
+          'mattis',
+          'tortor',
+          'scelerisque',
+          'nulla',
+          'interdum',
+          'tellus',
+          'malesuada',
+          'rhoncus',
+          'porta',
+          'sem',
+          'aliquet',
+          'et',
+          'nam',
+          'suspendisse',
+          'potenti',
+          'vivamus',
+          'luctus',
+          'fringilla',
+          'erat',
+          'donec',
+          'justo',
+          'vehicula',
+          'ultricies',
+          'varius',
+          'ante',
+          'primis',
+          'faucibus',
+          'ultrices',
+          'posuere',
+          'cubilia',
+          'curae',
+          'etiam',
+          'cursus',
+          'aliquam',
+          'quam',
+          'dapibus',
+          'nisl',
+          'feugiat',
+          'egestas',
+          'class',
+          'aptent',
+          'taciti',
+          'sociosqu',
+          'ad',
+          'litora',
+          'torquent',
+          'per',
+          'conubia',
+          'nostra',
+          'inceptos',
+          'himenaeos',
+          'phasellus',
+          'nibh',
+          'pulvinar',
+          'vitae',
+          'urna',
+          'iaculis',
+          'lobortis',
+          'nisi',
+          'viverra',
+          'arcu',
+          'morbi',
+          'pellentesque',
+          'metus',
+          'commodo',
+          'ut',
+          'facilisis',
+          'felis',
+          'tristique',
+          'ullamcorper',
+          'placerat',
+          'aenean',
+          'convallis',
+          'sollicitudin',
+          'integer',
+          'rutrum',
+          'duis',
+          'est',
+          'etiam',
+          'bibendum',
+          'donec',
+          'pharetra',
+          'vulputate',
+          'maecenas',
+          'mi',
+          'fermentum',
+          'consequat',
+          'suscipit',
+          'aliquam',
+          'habitant',
+          'senectus',
+          'netus',
+          'fames',
+          'quisque',
+          'euismod',
+          'curabitur',
+          'lectus',
+          'elementum',
+          'tempor',
+          'risus',
+          'cras',
+        ];
+        let word =
+          collectionOfWord[Math.floor(Math.random() * collectionOfWord.length)];
+        return word;
+      }
+      // let arr = document.querySelectorAll('label[class ="check-box"]')
+      // let input = document.getElementById("input-info")
+      // input.addEventListener("submit", postInfo);
+      //
+      // for (let el of arr){
+      //     el.addEventListener("click", function(event){
+      //         let button = event.target.closest('label')
+      //         if (!button) return; // (2)
+      //
+      //         postInfo(button); // (4)
+      //     })
+      // }
+      //
+      // function postInfo(button){
+      //     if (selectedButton) { // видалити наявне виділення, якщо таке є
+      //         selectedButton.classList.remove('active');
+      //         document.remove(div)
+      //     }
+      //     let selectedButton = button;
+      //     console.log(1)
+      //     let array = ["lorem ", "ipsum ", "dolor ", "amet ", "adipiscing ", "elit ", "urna "]
+      //     let div = document.createElement('div')
+      //     let innerText = "Lorem ipsum, "
+      //     for(let i = 0; i < j; i++){
+      //         let j = Math.floor(Math.random()* array.length)
+      //         innerText += array[j]
+      //     }
+      //     div.innerHTML = innerText
+      //     document.append(div)
+      // }
+    </script>
+
+    <!--    <div id="form" class="wrap">-->
+
+    <!--        <div>-->
+    <!--            <input id="input-info" name = "countLength" type="text" onsubmit="postInfo()">-->
+    <!--        </div>-->
+
+    <!--        <div id="radio-buttons">-->
+    <!--            <label class="check-box" onclick="delegate" checked = "true" value>-->
+    <!--                <input type="radio" id = "words" name = "typeValue">-->
+    <!--                <span class="material-symbols-outlined">-->
+    <!--                commit-->
+    <!--            </span>-->
+    <!--                Слів-->
+    <!--            </label>-->
+
+    <!--            <label class="check-box" onclick="delegate" checked = "false">-->
+    <!--                <input type="radio" id = "string" name = "typeValue" >-->
+    <!--                <span class="material-symbols-outlined">menu</span>-->
+    <!--                Рядок-->
+    <!--            </label>-->
+
+    <!--            <label class="check-box" onclick="delegate" checked = "false">-->
+    <!--                <input type="radio" id = "paragraph" name = "typeValue">-->
+    <!--                <span class="material-symbols-outlined">-->
+    <!--                wysiwyg-->
+    <!--                </span>-->
+    <!--                Абзац-->
+    <!--            </label>-->
+    <!--        </div>-->
+    <!--    </div>-->
+  </body>
+</html>
