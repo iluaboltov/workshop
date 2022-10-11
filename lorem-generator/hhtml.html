@@ -44,7 +44,7 @@
                 wysiwyg
                 </span>
                 <label for="pgrph">Абзаци</label>
-                <input type="radio" name="type" value="pgrph" id="pgrph">
+                <input type="radio" name="type" value="paragraph" id="pgrph">
 
             </div>
 
@@ -82,7 +82,7 @@
         createLorem(valueButton,typeRadio, div)
     })
 
-    cosnt highlight = (span)=> {
+    const highlight = (span)=> {
         if (selectedSpan) {
             selectedSpan.classList.remove('active');
         }
@@ -133,7 +133,7 @@
                 document.body.append(element)
                 break;
             }
-            case "pargraph": {
+            case "paragraph": {
                 let text = "";
                 for (let i = 0; i < value; i++) {
                     let numStr = Math.floor(Math.random() * 15) + 3
