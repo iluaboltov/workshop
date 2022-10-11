@@ -120,7 +120,7 @@ const makeStrLorem = ()=>{
     }
     return result + ". "
 }
-    
+
 const getWord = ()=>{
     const collectionOfWord = ['lorem', 'ipsum', 'dolor', 'sit', 'amet', 'consectetur',
         'adipiscing', 'elit', 'curabitur', 'vel', 'hendrerit', 'libero',
