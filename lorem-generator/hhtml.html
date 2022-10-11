@@ -151,17 +151,12 @@
     }
 
     const makeStrLorem = ()=>{
-        let coma;
-        let wordsNumber = Math.floor(Math.random() * 20) + 5
+        const word = getWord() + " ";
 
-        let word = getWord() + " "
 
-        let result = word[0].toUpperCase() + word.slice(1)
-
-        if(wordsNumber >= 20){
-            coma = Math.floor(Math.random() * wordsNumber) + 10
-        }
-        else {coma = 0}
+        let wordsNumber = Math.floor(Math.random() * 20) + 5;
+        let placementComa = wordsNumber >= 20 ? Math.floor(Math.random() * wordsNumber) + 10 : 0;
+        let result = word[0].toUpperCase() + word.slice(1);
 
         for (let i = 0; i <= wordsNumber-1; i++) {
 
@@ -169,11 +164,11 @@
                 result += getWord()
                 continue;
             }
-            if(coma == 0){
+            if(placementComa == 0){
                 result += getWord() + " "
                 continue;
             }
-            if (i % coma == 0 && i != 0) {
+            if (i % placementComa == 0 && i != 0) {
                 result += getWord() + ", "
                 continue;
             }
