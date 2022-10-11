@@ -133,7 +133,7 @@
                 document.body.append(element)
                 break;
             }
-            case "pgrph": {
+            case "pargraph": {
                 let text = "";
                 for (let i = 0; i < value; i++) {
                     let numStr = Math.floor(Math.random() * 15) + 3
@@ -182,7 +182,7 @@
         return result + ". "
     }
 
-    function getWord() {
+    const getWord = ()=> {
         const collectionOfWord = ['lorem', 'ipsum', 'dolor', 'sit', 'amet', 'consectetur',
             'adipiscing', 'elit', 'curabitur', 'vel', 'hendrerit', 'libero',
             'eleifend', 'blandit', 'nunc', 'ornare', 'odio', 'ut',
@@ -216,72 +216,6 @@
         let word = collectionOfWord[Math.floor(Math.random() * collectionOfWord.length)]
         return word
     }
-    // let arr = document.querySelectorAll('label[class ="check-box"]')
-    // let input = document.getElementById("input-info")
-    // input.addEventListener("submit", postInfo);
-    //
-    // for (let el of arr){
-    //     el.addEventListener("click", function(event){
-    //         let button = event.target.closest('label')
-    //         if (!button) return; // (2)
-    //
-    //         postInfo(button); // (4)
-    //     })
-    // }
-    //
-    // function postInfo(button){
-    //     if (selectedButton) { // видалити наявне виділення, якщо таке є
-    //         selectedButton.classList.remove('active');
-    //         document.remove(div)
-    //     }
-    //     let selectedButton = button;
-    //     console.log(1)
-    //     let array = ["lorem ", "ipsum ", "dolor ", "amet ", "adipiscing ", "elit ", "urna "]
-    //     let div = document.createElement('div')
-    //     let innerText = "Lorem ipsum, "
-    //     for(let i = 0; i < j; i++){
-    //         let j = Math.floor(Math.random()* array.length)
-    //         innerText += array[j]
-    //     }
-    //     div.innerHTML = innerText
-    //     document.append(div)
-    // }
-
-
 </script>
-
-<!--    <div id="form" class="wrap">-->
-
-<!--        <div>-->
-<!--            <input id="input-info" name = "countLength" type="text" onsubmit="postInfo()">-->
-<!--        </div>-->
-
-<!--        <div id="radio-buttons">-->
-<!--            <label class="check-box" onclick="delegate" checked = "true" value>-->
-<!--                <input type="radio" id = "words" name = "typeValue">-->
-<!--                <span class="material-symbols-outlined">-->
-<!--                commit-->
-<!--            </span>-->
-<!--                Слів-->
-<!--            </label>-->
-
-<!--            <label class="check-box" onclick="delegate" checked = "false">-->
-<!--                <input type="radio" id = "string" name = "typeValue" >-->
-<!--                <span class="material-symbols-outlined">menu</span>-->
-<!--                Рядок-->
-<!--            </label>-->
-
-<!--            <label class="check-box" onclick="delegate" checked = "false">-->
-<!--                <input type="radio" id = "paragraph" name = "typeValue">-->
-<!--                <span class="material-symbols-outlined">-->
-<!--                wysiwyg-->
-<!--                </span>-->
-<!--                Абзац-->
-<!--            </label>-->
-<!--        </div>-->
-<!--    </div>-->
-
-
-
 </body>
 </html>
