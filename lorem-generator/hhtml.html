@@ -150,7 +150,7 @@
         }
     }
 
-    function makeStrLorem() {
+    const makeStrLorem = ()=>{
         let coma;
         let wordsNumber = Math.floor(Math.random() * 20) + 5
 
@@ -182,7 +182,7 @@
         return result + ". "
     }
 
-    const getWord = ()=> {
+    const getWord = ()=>{
         const collectionOfWord = ['lorem', 'ipsum', 'dolor', 'sit', 'amet', 'consectetur',
             'adipiscing', 'elit', 'curabitur', 'vel', 'hendrerit', 'libero',
             'eleifend', 'blandit', 'nunc', 'ornare', 'odio', 'ut',
