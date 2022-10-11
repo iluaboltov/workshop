@@ -82,7 +82,7 @@
         createLorem(valueButton,typeRadio, div)
     })
 
-    function highlight(span) {
+    cosnt highlight = (span)=> {
         if (selectedSpan) {
             selectedSpan.classList.remove('active');
         }
@@ -90,7 +90,7 @@
         selectedSpan.classList.add('active');
     }
 
-    function checkedRadioButton(variable) {
+    const checkedRadioButton = (variable)=> {
         for (let el of variable){
             if(el.checked){
                 return el.value
@@ -98,7 +98,7 @@
         }
     }
 
-    function createLorem(value, type, element) {
+    const createLorem = (value, type, element)=> {
 
         switch (type) {
             case "word": {
@@ -213,8 +213,7 @@
             'fermentum', 'consequat', 'suscipit', 'aliquam', 'habitant', 'senectus',
             'netus', 'fames', 'quisque', 'euismod', 'curabitur', 'lectus',
             'elementum', 'tempor', 'risus', 'cras']
-        let word = collectionOfWord[Math.floor(Math.random() * collectionOfWord.length)]
-        return word
+        return collectionOfWord[Math.floor(Math.random() * collectionOfWord.length)]
     }
 </script>
 </body>
