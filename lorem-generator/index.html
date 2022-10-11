@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hhtml</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="wrap">
+    <form action="" method="post" id="form">
+
+        <div class="div-submit-button">
+            <input id="input-info" type="text" placeholder="Enter a number">
+            <input type="submit">
+        </div>
+
+        <div class = "div-radio-button" id="buttons" >
+
+            <div class="check-box">
+
+                <span class="material-symbols-outlined icon">
+                commit
+                </span>
+                <label for="word">Слова</label>
+                <input type="radio" name="type" value="word" id="word">
+
+            </div>
+
+            <div class="check-box">
+
+                <span class="material-symbols-outlined icon">
+                menu
+                </span>
+                <label for="str">Рядки</label>
+                <input type="radio" name="type" value="str" id="str">
+
+            </div>
+
+            <div class="check-box">
+
+                <span class="material-symbols-outlined icon">
+                wysiwyg
+                </span>
+                <label for="pgrph">Абзаци</label>
+                <input type="radio" name="type" value="paragraph" id="pgrph">
+
+            </div>
+
+        </div>
+
+    </form>
+</div>
+
+<script src="script.js">
+</script>
+</body>
+</html>
